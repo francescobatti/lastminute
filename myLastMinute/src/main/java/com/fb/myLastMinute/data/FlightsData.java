@@ -24,7 +24,7 @@ public class FlightsData {
             while ((line = br.readLine()) != null) {
 
                 String[] split = line.split(cvsSplitBy);
-                flights.add(new Flight(split[0],split[1],split[2],split[3]));
+                flights.add(new Flight(split[0],split[1],split[2],new Double(split[3])));
                 
             }
 

@@ -5,9 +5,9 @@ public class Flight {
 	private String origin;
 	private String destination;
 	private String airlineCode;
-	private String price;
+	private Double price;
 	
-	public Flight(String origin,String destination,String airlineCode,String price){
+	public Flight(String origin,String destination,String airlineCode,Double price){
 		
 		this.origin=origin;
 		this.destination=destination;
@@ -34,10 +34,10 @@ public class Flight {
 	public void setAirlineCode(String airlineCode) {
 		this.airlineCode = airlineCode;
 	}
-	public String getPrice() {
+	public Double getPrice() {
 		return price;
 	}
-	public void setPrice(String price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 }
