@@ -14,6 +14,7 @@ import com.fb.myLastMinute.controller.PriceCalculator;
 
 public class PriceCalculatorTestJunit {
 	
+	
 	@Test
 	public void testPrice(){
 		PriceCalculator pc = new PriceCalculator();
@@ -29,15 +30,18 @@ public class PriceCalculatorTestJunit {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
+		//con esto assert voy a comprobar que para lo input de arriba hay dos soluciones posibles
 		ArrayList<TravelSolution> solutions = pc.getSolutionsTravel(adult, child, infant, origin, destination, travelDate);
 		assertEquals("must find 2 solutions travel", 2, solutions.size());
 		int i = 1;
 		for (TravelSolution travelSolution : solutions) {
 			if( i == 1){
+				//con estos assert voy a comprobar que la primera soluzion es la de Turkish Airlines con precio de 563.96
 				assertEquals("travel1 CompanyAirLine must be Turkish Airlines", "Turkish Airlines", travelSolution.getCompanyAirLine());
 				assertEquals("travel1 total price must be 563.96", new Double (563.96), travelSolution.getTotalPrice());
 			}
 			if(i == 2){
+				//con estos assert voy a comprobar que la segunda soluzion es la de Easyjet con precio de 1113.3400000000001
 				assertEquals("travel2 CompanyAirLine must be Easyjet Airlines", "Easyjet", travelSolution.getCompanyAirLine());
 				assertEquals("travel2 total price must be 1113.3400000000001",  new Double (1113.3400000000001) , travelSolution.getTotalPrice());
 			}
