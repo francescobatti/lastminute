@@ -1,7 +1,7 @@
 package com.fb.myLastMinute.been;
 
 public class Airport {
-
+	//el object	Airport esta definido para contener los datos de los aereopuertos
 	private String iata;
 	private String city;
 	
