@@ -2,8 +2,15 @@ package com.fb.myLastMinute.util;
 
 import java.util.Date;
 
+
 public class DateUtil {
 	
+	/**
+	 * 
+	 * @param firstDate
+	 * @param secondDate
+	 * @return
+	 */
 	public long getDifferenceFromDate(Date firstDate, Date secondDate){
 		
 		long difDays = 0;
