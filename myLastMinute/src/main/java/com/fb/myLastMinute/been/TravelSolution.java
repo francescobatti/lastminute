@@ -2,6 +2,7 @@ package com.fb.myLastMinute.been;
 
 public class TravelSolution {
 	
+	//el object TravelSolution esta definito para contener cada dato de una soluzion de vuelo
 	private String origin;
 	private String destination;
 	private String idFlight;
