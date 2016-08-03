@@ -1,6 +1,8 @@
 package com.fb.myLastMinute.been;
 
 public class AirLine {
+	//el object	AirLine esta definido para contener los datos de las empresa de vuelo
+	
 	
 	private String iataAirLine;
 	private String nameCom;
