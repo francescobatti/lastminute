@@ -9,6 +9,8 @@ public class AirLineData {
 	ArrayList<AirLine> airline = new ArrayList<>();
 	
 	public AirLineData(){
+		//con este constructor vamos a inicializar todos lo airline
+		
 		createAirline();
 	}
 
