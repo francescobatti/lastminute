@@ -1,0 +1,23 @@
+This project is an search engine for flights solutions.
+We just develop the business part of this project. The main class of this project is PriceCalculator.
+Inside this class, we can call the method getSolutionsTravel, with 5 parameters:
+- n° of adult
+- n° of child
+- n° of infant
+- travel date
+- Airport origin
+- Airport destination
+and this method will return a list of possible solutions.
+Actually we use an predefined object to read aiport and airline and a csv file for inizialize the flights.
+In an future implementation this data can be stored in DB and retrieved using an persistance protocol (JPA, Hibernate, ... ) 
+the advantage to use this protocol is ti preserve the data persistance and grant to developer an level of astraction from the DB schema
+An Web App or a web site can be created to allow the user to insert the input data or select this from a list and to show him the retrieved solutions
+To link this View tier with Business tier, can be created an soa service , an web service or call the business part with a Restful call (JSON using Ajax)
+
+The final architecture of this project can be like:
+
+ >>> View Tier<<<
+      service
+ >>> Business Tier<<<
+ persistance framework
+ >>> Data Tier<<< 
