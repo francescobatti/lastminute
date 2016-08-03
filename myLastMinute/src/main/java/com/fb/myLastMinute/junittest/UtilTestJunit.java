@@ -12,6 +12,7 @@ import com.fb.myLastMinute.util.DateUtil;
 
 public class UtilTestJunit {
 	
+	
 	 @Test
      public void dateDifference() {
             DateUtil tester = new DateUtil(); 
@@ -24,7 +25,7 @@ public class UtilTestJunit {
      		}catch(Exception e){
      			e.printStackTrace();     			
      		}
-     		// assert statements
+     		// assert statements para comprobar q el metodo para la diferencia etre datas sea funzionante
             assertEquals("diff must be 10 days", 10, tester.getDifferenceFromDate(firstDate, secondDate));
      }
 
