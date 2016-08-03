@@ -13,10 +13,12 @@ import com.fb.myLastMinute.data.FlightsData;
 public class FlightsConstructorTestJunit {
 
 	
+	
 	 @Test
      public void flightsNumberTest() {	
 		 FlightsData fd = new FlightsData();
 		 ArrayList<Flight> flights = fd.getFlights();
+		 //assert para validar lo que vamos a cargar desde el file csv
 		 assertEquals("flights must be 89 days", 89, flights.size());
 	 }
 	   
