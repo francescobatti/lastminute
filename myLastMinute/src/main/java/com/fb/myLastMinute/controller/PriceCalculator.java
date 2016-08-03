@@ -25,6 +25,9 @@ public class PriceCalculator {
 	 */
 	public ArrayList<TravelSolution> getSolutionsTravel(int adult, int child, int infant, String origin, String destination, Date travelDate){
 		
+		//esto es el metodo clave que tomando en input numero de adults, childs, infants, origen, destinacion y fecha busqueda return una lista de soluciones posibles
+		//en normalidad este metodo puede ser llamado desde un web service, un SOA service o devolver respuesta rest, para que estos dados se visualizen en un front-end para el user
+		
 		ArrayList<TravelSolution> solutions = new ArrayList<>();
 		solutions = getSolutions(solutions,origin,destination);
 		int perc = getPercent(travelDate);
@@ -41,8 +44,16 @@ public class PriceCalculator {
 		return solutions;
 	}
 	
+	/**
+	 * 
+	 * @param solutions
+	 * @param origin
+	 * @param destination
+	 * @return
+	 */
 	private ArrayList<TravelSolution> getSolutions(ArrayList<TravelSolution> solutions, String origin, String destination) {
 		
+		//esto metodo busca todal las posibles solucione para origen y destinacion, no hay dateTravel porque esta definido que cada vuelo sale cada dia.
 		ArrayList<Flight> flights = new FlightsData().getFlights();
 		TravelSolution solution = null;
 		for (Flight flight : flights) {
@@ -53,11 +64,13 @@ public class PriceCalculator {
 				solution.setIdFlight(flight.getAirlineCode());
 				solution.setTravelPrice(flight.getPrice());
 				solutions.add(solution);
+				
 			}
 		}
 		return solutions;
 	}
 
+	
 	/**
 	 * 
 	 * @param origin
@@ -66,6 +79,7 @@ public class PriceCalculator {
 	 */
 	private double getPriceInfant(String idFlight) {
 		
+		//esto metodo busca el precio para lo enfant que esta definido a nivel de airline y no de vuelo
 		Double priceInf = null;
 		ArrayList<AirLine> airlines = new AirLineData().getAirline();
 				//System.out.println("PriceCalculator.getPriceInfant() IATACode = "+iataCode);
@@ -75,7 +89,7 @@ public class PriceCalculator {
 					}
 		}
 		
-		//System.out.println("PriceCalculator.getPriceInfant() - priceInf = " + priceInf + " €");
+		//System.out.println("PriceCalculator.getPriceInfant() - priceInf = " + priceInf + " â‚¬");
 		return (priceInf == null ? 0 : priceInf) ;
 	}
 
@@ -86,6 +100,7 @@ public class PriceCalculator {
  */
 private String getCompanyName(String idFlight) {
 		
+	//esto metodo busca el nombre de la airline de cada vuelo.
 		String compName = null;
 		ArrayList<AirLine> airlines = new AirLineData().getAirline();
 				//System.out.println("PriceCalculator.getPriceInfant() IATACode = "+iataCode);
@@ -95,11 +110,17 @@ private String getCompanyName(String idFlight) {
 					}
 		}
 		
-		//System.out.println("PriceCalculator.getPriceInfant() - priceInf = " + priceInf + " €");
+		//System.out.println("PriceCalculator.getPriceInfant() - priceInf = " + priceInf + " â‚¬");
 		return (compName == null ? "" : compName) ;
 	}
 
+/**
+ * 
+ * @param aiportCode
+ * @return
+ */
 private String getAiportName(String aiportCode){
+	//esto metodo busca el nombre de el airport para cada airport code
 	String airportName = null;
 	ArrayList<Airport> airlines = new AirportsData().getAirports();
 	for (Airport airport : airlines) {
