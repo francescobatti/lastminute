@@ -8,11 +8,14 @@ public class AirportsData {
 	
 	private ArrayList<Airport> airports = new ArrayList<>();
 	
+	
 	public AirportsData() {
+		//con este constructor vamos a inicializar todos lo airport
 		createAirport();
 	}
 
 	private void createAirport() {
+		
 		airports.add(new Airport("MAD" ,"Madrid"));
 		airports.add(new Airport("BCN" ,"Barcelona"));
 		airports.add(new Airport("LHR" ,"London"));
