@@ -10,11 +10,16 @@ public class FlightsData {
 	
 	ArrayList<Flight> flights = new ArrayList<>();
 	
+	
 	public FlightsData(){
 		createFlights();
 	}
+	
 
 	private void createFlights() {
+		//aqui voy a cargar datos desde csv creando una istancia de la clase
+		//no hay un metodo set porque no quieremos otro metodo de inserimento vuelos si no lo del fichero.
+		
 		String csvFile = ".\\src\\main\\resources\\flights.csv";
         String line = "";
         String cvsSplitBy = ",";
@@ -34,7 +39,11 @@ public class FlightsData {
         }
 
     }
-
+	
+	/**
+	 * 
+	 * @return
+	 */
 	public ArrayList<Flight> getFlights() {
 		return flights;
 	}
