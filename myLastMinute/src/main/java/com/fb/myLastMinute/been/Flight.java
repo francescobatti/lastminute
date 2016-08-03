@@ -7,8 +7,9 @@ public class Flight {
 	private String airlineCode;
 	private Double price;
 	
+	
 	public Flight(String origin,String destination,String airlineCode,Double price){
-		
+	//el object	Flight esta definido para contener los datos de los vuelos
 		this.origin=origin;
 		this.destination=destination;
 		this.airlineCode= airlineCode;
